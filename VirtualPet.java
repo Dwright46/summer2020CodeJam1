@@ -1,38 +1,85 @@
-import java.time.Clock;
-import java.time.Instant;
+package virtualpet;
 
 public class VirtualPet {
-    private int tick;
-    private int hunger;
+    public int hunger;
     private int thirst;
     private int boredom;
     private int tiredness;
 
-    private int xpos = 0, ypos =0;
+    public VirtualPet(int hunger, int thirst, int boredom, int tiredness) {
+        this.hunger = hunger;
+        this.thirst = thirst;
+        this.boredom = boredom;
+        this.tiredness = tiredness;
+    }
 
-    public int getTick(){
+    public int getHunger() {
+        return hunger;
+    }
 
-        // over the time the
-
-        // hunger = hunger + anotherVariable ... each one
-
-        System.out.println();
-        return tick;
+    public int getThirst() {
+        return thirst;
     }
 
     public int getBoredom() {
         return boredom;
     }
 
-    public VirtualPet(int tick, int boredom){
-        this.tick = tick;
-        this.boredom = boredom;
+    public int getTiredness() {
+        return tiredness;
+    }
 
-        // method getPetStats
-                                           // sout"Press 1 to inc hunger "
-        // method feed  to dec. hunger ,, press (1)
+    public void tickHungerDecrease(int hungerAmount) {
+
+        if (hunger > hungerAmount) {
+            hunger -= hungerAmount;
+        } else {
+            hunger -= hunger;
+        }
+    }
+
+    public void tickHungerIncrease(int hungerAmount) {
+        hunger += hungerAmount;
+    }
+
+    public void tickThirstDecrease(int thirstAmount) {
+
+        if (thirst > thirstAmount) {
+            thirst -= thirstAmount;
+        } else {
+            thirst -= thirst;
+        }
+    }
+
+    public void tickThirstIncrease(int thirstAmount) {
+        thirst += thirstAmount;
+    }
+
+
+    public void tickBoredomDecrease(int boredomAmount) {
+
+        if (boredom > boredomAmount) {
+            boredom -= boredomAmount;
+        } else {
+            boredom -= boredomAmount;
+        }
+    }
+
+    public void tickBoredomIncrease(int boredomAmount) {
+        boredom += boredomAmount;
+    }
+
+    public void tickTirednessDecrease(int tirednessAmount) {
+
+        if (tiredness > tirednessAmount) {
+            tiredness -= tirednessAmount;
+        } else {
+            tiredness -= tirednessAmount;
+        }
+    }
+
+    public void tickTirednessIncrease(int tirednessAmount) {
+        tiredness += tirednessAmount;
     }
 
 }
-
-
